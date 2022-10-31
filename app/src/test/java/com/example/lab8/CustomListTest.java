@@ -15,13 +15,19 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class CustomListTest {
-    public CustomList mockCity() {
+    private CustomList list;
+
+    /**
+     * create a mocklist for my citylist
+     * @return
+     */
+    public CustomList MockCityList() {
         CustomList list = new CustomList(null,new ArrayList<>());
         return list;
     }
     @Test
     public void testAdd() {
-        CustomList mockList = mockCity();
+        CustomList mockList = MockCityList();
         int size = mockList.getCount();
         mockList.addCity(new City("Edmonton","Alberta"));
         assertEquals(mockList.getCount(),size+1);
